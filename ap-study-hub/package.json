@@ -1,0 +1,17 @@
+{
+  "name": "ap-study-hub",
+  "version": "2.1.0",
+  "description": "Practice hub for seven AP courses: MCQs, FRQs/SAQs with scoring guides, flashcards, and notes.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/dev-server.mjs",
+    "dev": "node scripts/dev-server.mjs",
+    "build:data": "python3 tools/build_data.py",
+    "check": "python3 tools/build_data.py && python3 tools/verify_answers.py && node tools/check_math.cjs node_modules/katex"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": {
+    "katex": "0.16.47"
+  }
+}

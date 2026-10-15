@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AP Study Hub</title>
+<meta name="description" content="Free practice for AP Calculus AB and BC, Physics 1, Chemistry, Psychology, U.S. History, and World History: exam-style multiple choice, FRQs and SAQs with scoring guides, flashcards, notes, and curated resources.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="AP Hub">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="#/" aria-label="AP Study Hub home">
+    <span class="brand-mark" aria-hidden="true">AP</span>
+    <span class="brand-name">Study Hub</span>
+  </a>
+  <nav class="course-nav" aria-label="Courses" id="courseNav"></nav>
+  <div class="top-actions">
+    <a class="icon-btn notes-link" id="notesNav" href="#/notes" title="Notes">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h5"/></svg>
+      <span class="notes-link-text">Notes</span>
+    </a>
+    <button class="timer-chip" id="timerChip" aria-haspopup="dialog" aria-expanded="false" aria-controls="timerPanel" title="Focus timer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>
+      <span id="timerChipText">Focus</span>
+    </button>
+    <button class="icon-btn" id="themeBtn" aria-label="Switch color theme" title="Switch color theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
+  <section class="timer-panel" id="timerPanel" role="dialog" aria-label="Focus timer" hidden>
+    <div class="timer-modes" role="group" aria-label="Timer length">
+      <button data-mode="focus" class="is-on">Focus 25</button>
+      <button data-mode="short">Break 5</button>
+      <button data-mode="long">Break 15</button>
+    </div>
+    <div class="timer-face" id="timerFace" aria-live="polite">25:00</div>
+    <div class="timer-controls">
+      <button class="btn btn-primary" id="timerStart">Start</button>
+      <button class="btn" id="timerReset">Reset</button>
+    </div>
+    <p class="timer-note" id="timerNote">Work in focused blocks, then take a short break.</p>
+  </section>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="footer">
+  <p>Practice questions are original and written to match the official College Board course and exam descriptions. AP® is a registered trademark of the College Board, which is not affiliated with this site.</p>
+  <p class="footer-actions">Progress and notes are saved in this browser only.
+    <button class="linklike" id="exportBtn">Download a backup</button>
+    <button class="linklike" id="importBtn">Restore from backup</button>
+    <button class="linklike" id="fxBtn" aria-pressed="true">Celebrations: on</button>
+    <input type="file" id="importFile" accept="application/json" hidden>
+  </p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="vendor/katex/katex.min.js" defer></script>
+<script src="vendor/katex/contrib/mhchem.min.js" defer></script>
+<script src="vendor/katex/contrib/auto-render.min.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/celebrate.js" defer></script>
+<script src="js/notes.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>
